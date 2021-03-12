@@ -1,12 +1,15 @@
 import React from 'react'
 
-const WeatherInfo = ({ image, weather }) => {
+const WeatherInfo = ({ weather }) => {
   return (
     <div className="weatherContainer">
-      <p className="weatherText">
-        {weather.current.temperature} °C, {weather.current.weather_descriptions[0]}
+      <p id="temperature" className="weatherText">
+        {Math.round(weather.main.temp)} °C
       </p>
-      <img className="weatherImage" src={image} alt="current weather icon" />
+      <p id="description" className="weatherText">
+        {weather.weather[0].description}
+      </p>
+      <img className="weatherImage" src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt="current weather icon" />
     </div>
   )
 }
