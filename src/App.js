@@ -51,9 +51,11 @@ function App() {
   // This will run and get new conditions every time
   // the state for the currently selected city updates.
 
+  const API_KEY = process.env.REACT_APP_API_KEY
+
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(`https://api.openweathermap.org/data/2.5/onecall?lat=${city.coordinates[0]}&lon=${city.coordinates[1]}&units=metric&exclude=minutely,hourly,alerts&appid=${process.env.REACT_APP_API_KEY}`)
+      const result = await axios(`https://api.openweathermap.org/data/2.5/onecall?lat=${city.coordinates[0]}&lon=${city.coordinates[1]}&units=metric&exclude=minutely,hourly,alerts&appid=${API_KEY}`)
       setWeather(result.data)
     }
 
