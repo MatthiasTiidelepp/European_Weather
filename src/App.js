@@ -5,13 +5,12 @@ import CityDropdown from './components/CityDropdown'
 import WeatherInfo from './components/WeatherInfo'
 
 function App() {
-  // States for the current dropdown value, the list of cities
-  // for dropdown, and the fetched weather data.
-
+  // States for the the list of cities, current dropdown value, and the fetched weather data.
   const [ cities, setCities ] = useState()
   const [ city, setCity ] = useState({ capital: 'Tallinn', coordinates: [59, 26] })
   const [ weather, setWeather ] = useState()
 
+  // An array of weekdays and the current date to generate weekday names for the forecast
   const week = [
     'Sunday',
     'Monday',
@@ -21,7 +20,6 @@ function App() {
     'Friday',
     'Saturday'
   ]
-
   const day = new Date().getDay()
 
   // Getting a list of all european region capitals.
@@ -31,30 +29,24 @@ function App() {
       const result = await axios.get(
         'https://restcountries.eu/rest/v2/regionalbloc/eu'
       )
-    await setCities(result.data.map(c => {
-      return (
-        {
-          "capital": c.capital,
-          "coordinates": c.latlng
-        }
-      )
-    }))
+      await setCities(result.data.map(c => {
+        return (
+          {
+            'capital': c.capital,
+            'coordinates': c.latlng
+          }
+        )
+      }))
+    }
 
-    //await setCity(cities[0])
-  }
-  
-  fetchData()
-}, [])
+    fetchData()
+  }, [])
 
-  // Getting an object with info of
-  // weather conditions in the selected city.
-  // This will run and get new conditions every time
-  // the state for the currently selected city updates.
-
-  const API_KEY = process.env.REACT_APP_API_KEY
-
+  // Getting an object with info of weather conditions in the selected city.
+  // This will run and get new conditions every time the state for the currently selected city updates.
   useEffect(() => {
     const fetchData = async () => {
+      const API_KEY = await process.env.REACT_APP_API_KEY
       const result = await axios(`https://api.openweathermap.org/data/2.5/onecall?lat=${city.coordinates[0]}&lon=${city.coordinates[1]}&units=metric&exclude=minutely,hourly,alerts&appid=${API_KEY}`)
       setWeather(result.data)
     }
@@ -62,11 +54,12 @@ function App() {
     fetchData()
   }, [ city ])
 
+  // Event handler for setting the current city to the one chosen from dropdown
   const handleDropdown = (event)  => {
     setCity(
       {
-        "capital": event.target.value,
-        "coordinates": cities.find(c => c.capital === event.target.value).coordinates
+        'capital': event.target.value,
+        'coordinates': cities.find(c => c.capital === event.target.value).coordinates
       }
     )
   }
@@ -84,11 +77,11 @@ function App() {
               cities={cities}
               city={city}
               setCity={setCity}
-              handleDropdown={handleDropdown} 
+              handleDropdown={handleDropdown}
             />
           </div>
         }
-  
+
         {!weather ?
           null
           : <WeatherInfo
@@ -98,12 +91,12 @@ function App() {
           />
         }
       </div>
-      
+
       <footer className="footerText">
         by Matthias Tiidelepp
       </footer>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

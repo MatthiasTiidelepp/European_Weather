@@ -1,19 +1,21 @@
+@font-face {
+  font-family: 'Roboto-Light';
+  src: local('Roboto-Light'), url(./fonts/Roboto/Roboto-Light.ttf) format('truetype');
+}
+
 html {
   background: linear-gradient(to top, hsl(0, 0%, 85%), hsl(0, 0%, 75%)) no-repeat center center fixed;
 }
 
-.headerContainer {
-  display: flex;
-  justify-content: flex-start;
-}
-
 .logoImage {
-  margin: 0.4rem 1.5rem;
-  width: 25%;
+  margin-left: 1.5rem;
+  margin-top: 0.4rem;
+  width: 20rem;
 }
 
 .mainContainer {
   margin: 2rem;
+  margin-top: 0.5rem;
   outline: 0.5rem solid hsl(0, 0%, 70%);
   padding: 0.5rem;
   
@@ -22,26 +24,24 @@ html {
 }
 
 .dropdownContainer {
-  border: 0.3rem solid hsl(0, 0%, 65%);
   background: hsl(0, 0%, 45%);
 }
 
 .citiesDropdown {
-  margin: 0.5rem;
-  padding: 0.4rem 0.6rem;
+  margin: 1rem;
+  padding: 0.1rem;
 
-  background: hsl(0, 0%, 40%);
-  color: hsl(0, 0%, 100%);
+  background: hsl(0, 0%, 52%);
+  color: hsl(0, 0%, 85%);
   border-radius: 0.2rem;
 
-  font: 400 2rem 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font: 1.8rem 'Roboto-Light';
 }
 
 .weatherTable {
-  width: 100%;
   border-collapse: collapse;
-  border: 0.3rem solid hsl(0, 0%, 65%);
-  table-layout: inherit;
+  width: 100%;
+  justify-content: space-between;
 }
 
 tr:nth-child(even) {
@@ -49,28 +49,18 @@ tr:nth-child(even) {
 }
 
 .weatherText {
-  font: 300 2.2rem 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font: 1.7rem 'Roboto-Light';
   text-transform: capitalize;
-  overflow-wrap: break-word;
-}
-
-.weatherImage {
-  margin: 0.5rem;
-  align-self: center;
-
-  border-radius: 0.2rem;
-  background: hsl(201, 100%, 72%);
 }
 
 #day {
+  padding-left: 1.2rem;
   width: 12rem;
-  border-right: 0.2rem solid hsl(0, 0%, 65%);
-  color: hsl(0, 0%, 100%);
-  text-align: center;
+  color: hsl(0, 0%, 85%);
 }
 
 #temperature {
-  padding-left: 1.5rem;
+  padding-left: 4rem;
   color: hsl(0, 0%, 100%);
 }
 
@@ -78,11 +68,18 @@ tr:nth-child(even) {
   color: hsl(0, 0%, 100%);
 }
 
+.weatherImage {
+  margin: 0.4rem;
+  align-self: center;
+
+  border-radius: 0.2rem;
+  background: hsl(0, 0%, 70%);
+}
+
 .footerText {
   margin-left: 2rem;
-  padding: 0.6rem 0.2rem;
 
-  color: hsl(0, 0%, 40%);
+  color: hsl(0, 0%, 45%);
 
-  font: 350 1.25rem 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font: 350 1.25rem 'Roboto-Light';
 }

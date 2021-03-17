@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../assets/E_sun.svg'
 
+// Component for displaying the name logo as a header
 const Header = () => {
   return (
     <header className="headerContainer">
