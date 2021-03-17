@@ -8,30 +8,30 @@ html {
 }
 
 .logoImage {
-  margin-left: 1.5rem;
-  margin-top: 0.4rem;
+  margin-left: 3.8rem;
   width: 20rem;
 }
 
 .mainContainer {
-  margin: 2rem;
+  margin: 4rem;
   margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   outline: 0.5rem solid hsl(0, 0%, 70%);
   padding: 0.5rem;
   
   border: 0.5rem solid hsl(0, 0%, 65%);
-  background: hsl(0, 0%, 52%);
+  background: hsl(0, 0%, 55%);
 }
 
 .dropdownContainer {
-  background: hsl(0, 0%, 45%);
+  background: hsl(0, 0%, 50%);
 }
 
 .citiesDropdown {
   margin: 1rem;
   padding: 0.1rem;
 
-  background: hsl(0, 0%, 52%);
+  background: hsl(0, 0%, 55%);
   color: hsl(0, 0%, 85%);
   border-radius: 0.2rem;
 
@@ -45,7 +45,7 @@ html {
 }
 
 tr:nth-child(even) {
-  background: hsl(0, 0%, 45%);
+  background: hsl(0, 0%, 50%);
 }
 
 .weatherText {
@@ -77,9 +77,13 @@ tr:nth-child(even) {
 }
 
 .footerText {
-  margin-left: 2rem;
+  margin-left: 3.8rem;
 
   color: hsl(0, 0%, 45%);
 
   font: 350 1.25rem 'Roboto-Light';
+}
+
+.codeLink {
+  font-size: 1rem;
 }

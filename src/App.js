@@ -3,6 +3,7 @@ import axios from 'axios'
 import Header from './components/Header'
 import CityDropdown from './components/CityDropdown'
 import WeatherInfo from './components/WeatherInfo'
+import Footer from './components/Footer'
 
 function App() {
   // States for the the list of cities, current dropdown value, and the fetched weather data.
@@ -92,9 +93,7 @@ function App() {
         }
       </div>
 
-      <footer className="footerText">
-        by Matthias Tiidelepp
-      </footer>
+      <Footer />
     </div>
   )
 }
